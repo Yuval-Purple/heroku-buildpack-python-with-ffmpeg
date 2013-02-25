@@ -10,6 +10,16 @@ MANAGE_FILE=${MANAGE_FILE:2}
 cat <<EOF
 ---
 config_vars:
+  PATH: /app/.heroku/venv/bin:/app/vendor/ffmpeg/bin:/bin:/usr/local/bin:/usr/bin
+  PYTHONUNBUFFERED: true
+  LIBRARY_PATH: /app/.heroku/vendor/lib
+  LD_LIBRARY_PATH: /app/.heroku/vendor/lib:/app/vendor/ffmpeg/lib
+  LANG: en_US.UTF-8
+  PYTHONHASHSEED: random
+  PYTHONHOME: /app/.heroku/venv/
+  PYTHONPATH: /app/
+EOF
+
 
 EOF
 

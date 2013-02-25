@@ -65,6 +65,17 @@ cd $BUILD_DIR
 # Experimental pre_compile hook.
 source $BIN_DIR/steps/hooks/pre_compile
 
+# Clone the already compiled ffmped binaries from github
+FFMPEG_BINARY="https://github.com/dzello/ffmpeg-heroku.git"
+VENDOR_FOLDER="vendor/ffmpeg"
+
+mkdir -p $BUILD_DIR/$VENDOR_FOLDER  &> /dev/null
+git clone $FFMPEG_BINARY $BUILD_DIR/$VENDOR_FOLDER  &> /dev/null
+puts-step "Cloning pre-built ffmpeg repository..."
+# ### Sanity Checks
+#
+# Just a little peace of mind.
+
 # If no requirements given, assume `setup.py develop`.
 if [ ! -f requirements.txt ]; then
   puts-step "No requirements.txt provided; assuming dist package."

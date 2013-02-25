@@ -31,21 +31,6 @@ Example usage:
      create mode 100644 requirements.txt
      create mode 100644 wsgi.py
     $ git push heroku master
-<<<<<<< HEAD
-    ...
-    -----> Fetching custom git buildpack... done
-    -----> Python app detected
-    -----> No runtime.txt provided; assuming python-2.7.3.
-    -----> Preparing Python runtime (python-2.7.3)
-    -----> Installing Distribute (0.6.34)
-    -----> Installing Pip (1.2.1)
-    -----> Installing dependencies using Pip (1.2.1)
-           Downloading/unpacking Flask==0.7.2 (from -r requirements.txt (line 1))
-           Downloading/unpacking Werkzeug>=0.6.1 (from Flask==0.7.2->-r requirements.txt (line 1))
-           Downloading/unpacking Jinja2>=2.4 (from Flask==0.7.2->-r requirements.txt (line 1))
-           Installing collected packages: Flask, Werkzeug, Jinja2
-           Successfully installed Flask Werkzeug Jinja2
-=======
     Counting objects: 6, done.
     Delta compression using up to 4 threads.
     Compressing objects: 100% (5/5), done.
@@ -94,7 +79,6 @@ Example usage:
                Linking /tmp/build_3fhn8k1szm2sp/.heroku/venv/build/greenlet/build/lib.linux-x86_64-2.7/greenlet.so to /tmp/build_3fhn8k1szm2sp/.heroku/venv/build/greenlet/greenlet.so
                
            Successfully installed gevent gunicorn greenlet
->>>>>>> 2bcc107788e36703a08e17dbca4fdfe10c50dc8e
            Cleaning up...
     -----> Discovering process types
            Procfile declares types -> web
@@ -136,7 +120,6 @@ Specify a Runtime
 
 You can also provide arbitrary releases Python with a `runtime.txt` file.
 
-<<<<<<< HEAD
     $ cat runtime.txt
     python-3.3.0
     
@@ -145,11 +128,10 @@ Runtime options include:
 - python-2.7.3
 - python-3.3.0
 - pypy-1.9 (experimental)
-=======
+
 To change the vendored virtualenv, unpack the desired version to the `src/` folder, and update the virtualenv() function in `bin/compile` to prepend the virtualenv module directory to the path. The virtualenv release vendors its own versions of pip and setuptools.
 
 TODO
 ----
 
 Next step should be to clone the actual ffmpeg sources and compile them on heroku, instead of cloning the pre-compiled binaries.
->>>>>>> 2bcc107788e36703a08e17dbca4fdfe10c50dc8e

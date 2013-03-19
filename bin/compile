@@ -84,6 +84,11 @@ mkdir -p $BUILD_DIR/$VENDOR_FOLDER &> /dev/null
 git clone $FFMPEG_BINARY $BUILD_DIR/$VENDOR_FOLDER &> /dev/null
 puts-step "Cloning pre-built ffmpeg repository..."
 ####
+
+####
+# Clone the overlay.mov asset we use since it's really big.
+tar xvf /app/fitblok/fitblok_app/overlay/overlay.tar.gz --directory=/app/fitblok/fitblok_app/overlay/
+####
  
 # If no requirements given, assume `setup.py develop`.
 if [ ! -f requirements.txt ]; then
